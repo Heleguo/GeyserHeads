@@ -46,6 +46,7 @@ public class Commands implements CommandExecutor {
             Collections.reverse(l);
             config.setValue("skin-hashes", l);
             config.save();
+            GSFH.getInstance().getLogger().info("Loaded " + l.size() + " items.");
             GSFH.getInstance().getLogger().info("Loaded heads, please reload to load heads from Geyser-Spigot");
 
         }
