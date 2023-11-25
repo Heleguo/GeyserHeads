@@ -23,3 +23,9 @@ jobs:
         distribution: temurin
     - name: Build with Maven
       run: mvn package --file pom.xml
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.1.3
+      with:
+        name: "GSFH"
+        path: "target/*.jar"
+  
