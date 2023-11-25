@@ -38,6 +38,7 @@ public class Commands implements CommandExecutor {
                     GSFH.getInstance().getLogger().info(i.getAddon().getName() + " - " + i.getItemName());
                     String texturecode = NBTEditor.getTexture(i.getItem());
                     String[] ts = texturecode.split("/");
+                    if (l.contains(ts[ts.length-1])) continue;
                     l.add(ts[ts.length-1]);
                 }
             }
