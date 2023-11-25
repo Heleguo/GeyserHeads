@@ -3,4 +3,4 @@ GSFH is a [Slimefun4](https://github.com/Slimefun/Slimefun4) and [Geyser-Spigot]
 ## Commands
 - `/gsfh load`
 ## Build
-![build status](https://github.com/hahaa13/geyser-slimefun-heads/actions/workflows/maven.yml/badge.svg)
+[![build status](https://github.com/hahaa13/geyser-slimefun-heads/actions/workflows/maven.yml/badge.svg)](https://github.com/hahaa13/Geyser-Slimefun-Heads/actions/workflows/maven.yml)
