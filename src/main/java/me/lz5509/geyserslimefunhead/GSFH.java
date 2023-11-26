@@ -22,7 +22,7 @@ public class GSFH extends JavaPlugin implements SlimefunAddon {
 
     @Override
     public String getBugTrackerURL() {
-        return "https://github.com/hahaa13/Geyser-Slimefun-Heads";
+        return "https://github.com/hahaa13/Geyser-Slimefun-Heads/issues";
     }
 
     @Override
