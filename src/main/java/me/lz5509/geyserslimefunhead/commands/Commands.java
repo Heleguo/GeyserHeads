@@ -10,7 +10,6 @@ import me.lz5509.geyserslimefunhead.GSFH;
 import me.lz5509.geyserslimefunhead.libs.NBTEditor;
 
 import java.io.File;
-import java.util.Collections;
 import java.util.List;
 
 import org.bukkit.Material;
