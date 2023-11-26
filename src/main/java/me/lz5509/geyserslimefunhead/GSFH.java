@@ -6,7 +6,7 @@ import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import me.lz5509.geyserslimefunhead.commands.Commands;
 
 public class GSFH extends JavaPlugin implements SlimefunAddon {
-    public static GSFH instance;
+    private static GSFH instance;
 
     @Override
     public void onEnable() {
@@ -22,7 +22,7 @@ public class GSFH extends JavaPlugin implements SlimefunAddon {
 
     @Override
     public String getBugTrackerURL() {
-        return null;
+        return "https://github.com/hahaa13/Geyser-Slimefun-Heads";
     }
 
     @Override
