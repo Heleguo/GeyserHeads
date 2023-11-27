@@ -12,7 +12,7 @@ public class GSFH extends JavaPlugin implements SlimefunAddon {
     public void onEnable() {
         instance = this;
         this.getLogger().info("********************");
-        this.getLogger().info("*     GSFH - v" + this.getPluginVersion() + "      *");
+        this.getLogger().info("      GSFH - v" + this.getPluginVersion());
         this.getLogger().info("********************");
         this.getCommand("gsfh").setExecutor(new Commands());
     }

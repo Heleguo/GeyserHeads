@@ -10,6 +10,7 @@ import me.lz5509.geyserslimefunhead.GSFH;
 import me.lz5509.geyserslimefunhead.libs.NBTEditor;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.bukkit.Material;
@@ -37,11 +38,11 @@ public class Commands implements CommandExecutor {
                     GSFH.getInstance().getLogger().info(i.getAddon().getName() + " - " + i.getItemName());
                     String texturecode = NBTEditor.getTexture(i.getItem());
                     String[] ts = texturecode.split("/");
-                    if (!l.contains(ts[ts.length-1])){
-                        l.add(ts[ts.length-1]);
-                    }
+                    if (!l.contains(ts[ts.length-1])) l.add(ts[ts.length-1]);
                 }
             }
+            String[] i = {"player-names", "player-uuids", "player-profiles"};
+            for(String t : i) if(config.getStringList(t).isEmpty()) config.setValue(t, new ArrayList<>());
             config.setValue("skin-hashes", l);
             config.save();
             GSFH.getInstance().getLogger().info("Loaded " + l.size() + " items.");
