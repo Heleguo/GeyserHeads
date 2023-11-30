@@ -23,6 +23,8 @@ import org.bukkit.command.CommandExecutor;
 public class Commands implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+        if (args.length < 1) return true;
+        
         if (args[0].toLowerCase().equals("load")){
             if (sender instanceof Player) {
                 Player player = (Player) sender;
