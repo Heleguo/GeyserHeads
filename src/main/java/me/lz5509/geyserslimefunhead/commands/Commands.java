@@ -4,13 +4,13 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
+import io.github.bananapuncher714.nbteditor.NBTEditor;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import io.github.thebusybiscuit.slimefun4.utils.HeadTexture;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 import me.lz5509.geyserslimefunhead.GSFH;
-import me.lz5509.geyserslimefunhead.libs.NBTEditor;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -45,12 +45,16 @@ public class Commands implements CommandExecutor {
             itemlist.add(new CustomItemStack(SlimefunUtils.getCustomHead("e952d2b3f351a6b0487cc59db31bf5f2641133e5ba0006b18576e996a0293e52")));
             for (HeadTexture ht : HeadTexture.values()) if(!itemlist.contains(ht.getAsItemStack())) itemlist.add(ht.getAsItemStack());
             for (ItemStack i : itemlist){
-                if (!i.getItemMeta().getDisplayName().isEmpty()) GSFH.getInstance().getLogger().info(i.getItemMeta().getDisplayName());
-                else GSFH.getInstance().getLogger().info("Language Heads or Other Slimefun Heads...");
-                String texturecode = NBTEditor.getTexture(i);
-                if (texturecode==null) continue;
-                String[] ts = texturecode.split("/");
-                if (!l.contains(ts[ts.length-1])) l.add(ts[ts.length-1]);
+                try{
+                    if (!i.getItemMeta().getDisplayName().isEmpty()) GSFH.getInstance().getLogger().info(i.getItemMeta().getDisplayName());
+                    else GSFH.getInstance().getLogger().info("Language Heads or Other Slimefun Heads...");
+                    String texturecode = NBTEditor.getTexture(i);
+                    if (texturecode==null) continue;
+                    String[] ts = texturecode.split("/");
+                    if (!l.contains(ts[ts.length-1])) l.add(ts[ts.length-1]); 
+                } catch (Exception e) {
+                    GSFH.getInstance().getLogger().warning(e.getMessage());
+                }
             }
             String[] i = {"player-names", "player-uuids", "player-profiles"};
             for(String t : i) if(config.getStringList(t).isEmpty()) config.setValue(t, new ArrayList<>());
