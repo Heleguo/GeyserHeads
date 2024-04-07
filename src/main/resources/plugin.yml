@@ -5,9 +5,7 @@ main: me.lz5509.geyserslimefunhead.GSFH
 website: https://github.com/Slimefun/Addon-Template
 version: ${project.version}
 api-version: 1.14
-depend:
-- Slimefun
-- Geyser-Spigot
+softdepend: [Geyser-Spigot, Slimefun]
 commands:
   gsfh:
       description: GSFH COMMANDS

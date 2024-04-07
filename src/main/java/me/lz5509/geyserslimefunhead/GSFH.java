@@ -10,6 +10,7 @@ public class GSFH extends JavaPlugin {
     @Override
     public void onEnable() {
         instance = this;
+        saveResource("config.yml", false);
         this.getLogger().info("********************");
         this.getLogger().info("      GSFH - v" + this.getDescription().getVersion());
         this.getLogger().info("********************");
