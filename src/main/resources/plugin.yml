@@ -1,14 +1,14 @@
-name: GSFH
+name: GeyserHeads
 author: lz5509
-description: Geyser SlimeFun Heads
-main: me.lz5509.geyserslimefunhead.GSFH
+description: Geyser Heads
+main: me.lz5509.geyserheads.GeyserHeads
 website: https://github.com/Slimefun/Addon-Template
 version: ${project.version}
 api-version: 1.14
-softdepend: [Geyser-Spigot, Slimefun]
+softdepend: [Geyser-Spigot, Slimefun, HeadDatabase]
 commands:
-  gsfh:
+  geyserheads:
       description: GSFH COMMANDS
-      usage: /gsfh
-      aliases: [geyserslimefunheads, geyserslimefunhead]
-      permission: gsfh
+      usage: /geyserheads
+      aliases: [gh, geyserhead]
+      permission: geyserheads

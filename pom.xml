@@ -3,9 +3,9 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>me.lz5509.geyserslimefunhead</groupId>
-    <artifactId>GSFH</artifactId>
-    <version>1.1</version>
+    <groupId>me.lz5509.geyserheads</groupId>
+    <artifactId>GeyserHeads</artifactId>
+    <version>1.2</version>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -49,9 +49,40 @@
                 </includes>
             </resource>
         </resources>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.6.0</version>
+                <executions>
+                    <execution>
+                        <id>shade</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <relocations>
+                        <relocation>
+                        <pattern>io.github.bananapuncher714.nbteditor</pattern>
+                        <shadedPattern>me.lz5509.geyserheads.api.nbteditor</shadedPattern>
+                        </relocation>
+                    </relocations>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 
     <dependencies>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>23.0.0</version>
+        </dependency>
+        
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
@@ -62,13 +93,13 @@
         <dependency>
             <groupId>io.github.bananapuncher714</groupId>
             <artifactId>nbteditor</artifactId>
-            <version>7.19.2</version>
+            <version>7.19.5</version>
         </dependency>
 
         <dependency>
             <groupId>com.github.Slimefun</groupId>
             <artifactId>Slimefun4</artifactId>
-            <version>RC-28</version>
+            <version>RC-37</version>
             <scope>provided</scope>
             <exclusions>
                 <exclusion>
@@ -76,6 +107,13 @@
                     <artifactId>dough-api</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.arcaniax</groupId>
+            <artifactId>HeadDatabase-API</artifactId>
+            <version>1.3.2</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>
