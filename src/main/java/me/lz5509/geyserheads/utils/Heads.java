@@ -58,6 +58,7 @@ public class Heads {
     public void add(@NotNull HeadType type, @NotNull ItemStack item) {
         if (!(item.getItemMeta() instanceof SkullMeta)) return;
         String texturecode = NBTEditor.getTexture(item);
+        if (texturecode == null) return;
         String[] ts = texturecode.split("/");
         texturecode = ts[ts.length - 1];
 
